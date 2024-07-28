@@ -5,8 +5,8 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import url('./1-timer.css');
+@import url('./2-snackbar.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -22,4 +22,58 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #e5eaf5;
+  min-height: 100vh;
+}
+
+.task-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 100px;
+
+  font-size: large;
+}
+
+.task-item a {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #008cba;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  width: 180px;
+  color: white;
+
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.task-item a:active {
+  background-color: #005f73;
+  transform: scale(0.95);
+}
+
+.div-back {
+  padding-top: 15px;
+}
+
+.link-back {
+  border-radius: 10px;
+  /* background-color: aquamarine; */
+  background-color: #fafa33;
+  padding: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.link-back:active {
+  background-color: #e0e000;
+  transform: scale(0.95);
 }
