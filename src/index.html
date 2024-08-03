@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./img/home2.png" type="image/svg+xml" />
 
-    <title>Homework_2</title>
+    <title>Homework_3</title>
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
       rel="stylesheet"
     />
 
@@ -24,11 +24,20 @@
   </head>
   <body>
     <section class="task-section">
-      <h1>Homework_2</h1>
-      <ul class="task-list">
-        <li class="task-item"><a href="./1-timer.html">Task 1</a></li>
-        <li class="task-item"><a href="./2-snackbar.html">Task 2</a></li>
-      </ul>
+      <form class="search-form js-search-form">
+        <input
+          class="search-input"
+          type="text"
+          name="input_search"
+          required
+          placeholder="Search images..."
+        />
+        <button class="input-btn" type="submit">Search</button>
+      </form>
+
+      <span class="loader hidden"></span>
+      <ul class="gallery"></ul>
     </section>
+    <script type="module" src="./main.js" defer></script>
   </body>
 </html>

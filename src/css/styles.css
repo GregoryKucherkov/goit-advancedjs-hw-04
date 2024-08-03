@@ -5,14 +5,15 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./1-timer.css');
-@import url('./2-snackbar.css');
+@import url('./task.css');
+
+@import url('izitoast/dist/css/iziToast.min.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 500;
 
   color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
@@ -25,7 +26,7 @@
 }
 
 body {
-  background-color: #e5eaf5;
+  /* background-color: #e5eaf5; */
   min-height: 100vh;
 }
 
@@ -33,47 +34,45 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
-  padding-top: 100px;
-
-  font-size: large;
 }
 
-.task-item a {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  background-color: #008cba;
-  border-radius: 15px;
-  margin-bottom: 15px;
-  width: 180px;
-  color: white;
-
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
-}
-
-.task-item a:active {
-  background-color: #005f73;
-  transform: scale(0.95);
-}
-
-.div-back {
-  padding-top: 15px;
-}
-
-.link-back {
+/* Custom loader */
+.loader {
+  display: block;
+  position: relative;
+  height: 12px;
+  width: 80%;
+  border: 1px solid #fff;
   border-radius: 10px;
-  /* background-color: aquamarine; */
-  background-color: #fafa33;
-  padding: 15px;
-  font-weight: 500;
-  cursor: pointer;
-
-  transition: background-color 0.3s, transform 0.1s;
+  overflow: hidden;
+  width: 380px;
+  margin-bottom: 20px;
 }
 
-.link-back:active {
-  background-color: #e0e000;
-  transform: scale(0.95);
+.loader.hidden {
+  display: none;
 }
+
+.loader:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: green;
+  animation: 0.5s prog ease-in infinite;
+}
+
+@keyframes prog {
+  to {
+    width: 100%;
+  }
+}
+
+/* .iziToast>.iziToast-close  {
+  background-image: url('../img/bi_x-lg.svg');
+  fill: #fff;
+  opacity: 0;
+  color: rgb(255, 255, 255);
+} */
