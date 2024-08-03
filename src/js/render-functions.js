@@ -1,4 +1,6 @@
 import iziToast from 'izitoast';
+import icon from '../img/bi_x-octagon (1).svg';
+
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -21,7 +23,7 @@ export function gallery(pics) {
       position: 'topRight',
       timeout: 4000,
 
-      iconUrl: './img/bi_x-octagon.svg',
+      iconUrl: icon,
     });
     page.innerHTML = '';
     return;

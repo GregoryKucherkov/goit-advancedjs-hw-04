@@ -1,5 +1,7 @@
 import iziToast from 'izitoast';
 
+import icon from './img/bi_x-octagon (1).svg';
+
 //importing functions
 import fetchImgs from './js/pixabay-api';
 import { gallery, toggleLoader } from './js/render-functions';
@@ -22,7 +24,7 @@ const searchHandler = event => {
       messageSize: '16',
       position: 'topRight',
       timeout: 4000,
-      iconUrl: '/img/bi_x-octagon.svg',
+      iconUrl: icon,
     });
     formInput.reset();
     return;
