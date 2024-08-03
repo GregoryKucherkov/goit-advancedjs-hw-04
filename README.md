@@ -1,7 +1,3 @@
-#Homework_2
+#Homework_3
 
-1. Task 1:
-Create  a timer.
-
-2. Task 2:
-Create the promise generator.  
+1. Create a search with connection to Pixabay API
