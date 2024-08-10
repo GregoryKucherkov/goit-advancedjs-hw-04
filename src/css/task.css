@@ -94,3 +94,8 @@ button:disabled {
 .gallery-value {
   font-weight: 400;
 }
+
+.load-more-btn {
+  margin: 15px auto 25px;
+  display: block;
+}

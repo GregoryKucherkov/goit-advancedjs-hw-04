@@ -1,18 +1,20 @@
 import iziToast from 'izitoast';
 import icon from '../img/bi_x-octagon (1).svg';
 
-
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const page = document.querySelector('.gallery');
+
+//load-more button
+const loadMoreButton = document.querySelector('.load-more-btn');
 
 const slb = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
 
-export function gallery(pics) {
+export function gallery(pics, append = false) {
   if (pics.length === 0) {
     iziToast.error({
       message:
@@ -26,10 +28,13 @@ export function gallery(pics) {
       iconUrl: icon,
     });
     page.innerHTML = '';
+
+    loadMoreButton.classList.add('hidden'); // Hide button during new search
+
     return;
   }
 
-  page.innerHTML = pics
+  const markup = pics
     .map(
       pic =>
         `<li class="gallery-item">
@@ -47,12 +52,22 @@ export function gallery(pics) {
           <span class="gallery-metadata">Downloads <span class="gallery-value">${pic.downloads}</span></span>
         </p>
       </li>
-      
     `
     )
     .join('');
 
+    //checking if it is a new search or load-more option
+  if (append) {
+    page.insertAdjacentHTML('beforeend', markup);
+  } else {
+    page.innerHTML = markup;
+  }
+
   slb.refresh();
+
+  if (loadMoreButton) {
+    loadMoreButton.classList.remove('hidden'); // Show button if there are more images to load
+  }
 }
 
 export function toggleLoader() {
