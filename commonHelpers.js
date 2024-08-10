@@ -1,0 +1,17 @@
+import{a as f,S as L,i as p}from"./assets/vendor-4b99baf2.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const d of s.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&a(d)}).observe(document,{childList:!0,subtree:!0});function o(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(e){if(e.ep)return;e.ep=!0;const s=o(e);fetch(e.href,s)}})();const y="/goit-advancedjs-hw-04/assets/bi_x-octagon (1)-06de2d57.svg";function h(r,t=1){f.defaults.baseURL="https://pixabay.com/api/";const a={params:{key:"45225521-b1788b8383ce5fec9dc61aa0c",q:r,image_type:"photo",orientation:"horizontal",safesearch:!0,per_page:15,page:t}};return f.get("",a)}const u=document.querySelector(".gallery"),g=document.querySelector(".load-more-btn"),F=new L(".gallery a",{captionsData:"alt",captionDelay:250});function b(r,t=!1){if(r.length===0){p.error({message:"Sorry, there are no images matching <br> your search query. Please try again!",messageColor:"#FFF",backgroundColor:"#FF6865",messageSize:"16",position:"topRight",timeout:4e3,iconUrl:y}),u.innerHTML="",g.classList.add("hidden");return}const o=r.map(a=>`<li class="gallery-item">
+        <a class="gallery-link" href="${a.largeImageURL}">
+          <img
+            class="gallery-image"
+            src="${a.webformatURL}"
+            alt="${a.tags}"
+            />
+        </a>
+        <p class="gallery-description">
+          <span class="gallery-metadata">Likes <span class="gallery-value">${a.likes}</span></span>
+          <span class="gallery-metadata">Views <span class="gallery-value">${a.views}</span></span>
+          <span class="gallery-metadata">Comments <span class="gallery-value">${a.comments}</span></span>
+          <span class="gallery-metadata">Downloads <span class="gallery-value">${a.downloads}</span></span>
+        </p>
+      </li>
+    `).join("");t?u.insertAdjacentHTML("beforeend",o):u.innerHTML=o,F.refresh(),g&&g.classList.remove("hidden")}function c(){document.querySelector(".loader").classList.toggle("hidden")}const m=document.querySelector(".js-search-form"),n=document.querySelector(".load-more-btn");let l="",i=1;const v=async r=>{r.preventDefault(),l=r.target.elements.input_search.value.trim(),c();try{if(l===""){p.error({message:"Sorry, the form can't be empty!",messageColor:"#FFF",backgroundColor:"#FF6865",messageSize:"16",position:"topRight",timeout:4e3,iconUrl:y}),m.reset();return}i=1,n&&n.classList.add("hidden");const{data:{hits:t}}=await h(l);b(t),m.reset()}catch(t){console.log(t)}finally{c()}},S=async r=>{try{i+=1,c();const{data:{hits:t,totalHits:o}}=await h(l,i);let a=Math.ceil(o/15);if(i>=a){p.error({message:"We're sorry, but you've reached the end of search results.",messageColor:"#FFF",backgroundColor:"#FF6865",messageSize:"16",position:"topRight",timeout:4e3,iconUrl:y}),n.classList.add("hidden");return}b(t,!0);const e=document.querySelector(".gallery-item").getBoundingClientRect().height;window.scrollBy({top:2*e,behavior:"smooth"})}catch(t){console.log(t)}finally{c()}};m.addEventListener("submit",v);n&&n.addEventListener("click",S);
+//# sourceMappingURL=commonHelpers.js.map

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAPtJREFUWEftlkESgyAMRfFm7claT9berPU7xIE0QBJEpzOyYSN5LwGCUzh5TJ38Z1xPszlcjwCgj0icl9kl4RVI4ZS1S8IjIMHdElaBGtwlYRHQwM0SWgEL3CShEfDA1RItgR64SqIm0IK/Qwi4ehjoB7dKFype0ZJACw7WfYFCAgPwV6MNihKSgAbuEcCaHwkuoIUjmGUL0uJkEqmABW5+dNiCTYIEjoRntwMCZ8A3iZIASkRPbW+504x5zFnaAtqfz17kGIcnu3L4IcS39GMxQiCNv3JqnXCUQFbYS+CvK8DlW2dGTLanApfAVYHhFdj5KZDDtf6Kh0t8AVo9QiFbe6zUAAAAAElFTkSuQmCC" type="image/svg+xml" />
+
+    <title>Homework_4</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    
+    <script type="module" crossorigin src="/goit-advancedjs-hw-04/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-04/assets/vendor-4b99baf2.js">
+    <link rel="stylesheet" href="/goit-advancedjs-hw-04/assets/vendor-a088063d.css">
+    <link rel="stylesheet" href="/goit-advancedjs-hw-04/assets/index-19962f50.css">
+  </head>
+  <body>
+    <section class="task-section">
+      <form class="search-form js-search-form">
+        <input
+          class="search-input"
+          type="text"
+          name="input_search"
+          required
+          placeholder="Search images..."
+        />
+        <button class="input-btn" type="submit">Search</button>
+      </form>
+
+      <ul class="gallery"></ul>
+      <span class="loader hidden"></span>
+      <button class="input-btn load-more-btn hidden" type="button">
+        Load more
+      </button>
+    </section>
+    
+  </body>
+</html>
